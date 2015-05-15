@@ -1,6 +1,5 @@
 language: php
 
-
 php: 
   - 5.3
   - 5.4
@@ -11,8 +10,12 @@ before_script:
   - mkdir -p shippable/codecoverage
   - mkdir -p shippable/testresults
 
+env:
+  - secure: yJ8w9cvKFLPBv4t3gbOspTqPnWhY2RcljpUP5rQa62rw3ID31nhD+J7hcOH87PPmD1AdaxPwmKVZ4PWJ7nPxIDywTJiGdPhRFV9E7zbQ7SwT1wS64HKpVGlzX1QQK0IzM+T7//0OQAhzzFLCHOs6XxUkicTIZambtHfYzHusmFLZlVcPpEpweIfHW092FzSAhTSGZ5pyTE/HOiIhv1nDpo5nPKJP2KZsLRPwq8JrTiW80T7sTT99HwhmIHEwGEoMJ5L/un2YtS+edQdIFJo50EMYWEpBv/b8NZCOmq8eWSWnGhRJ5RVxK+Wn4P8KFDK8eMOgi12gHqWUxsBWqVVCGA==
+
 script:
    - phpunit  --log-junit shippable/testresults/junit.xml --coverage-xml shippable/codecoverage tests/calculator_test.php
+   - echo $key1
 
 
 notifications:
